@@ -5,6 +5,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import Navbar from './components/Navbar.jsx'
 import Acceuil from './components/Accueil.jsx';
+import Parametre from './components/Parametre.jsx';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -15,7 +16,8 @@ class App extends Component {
           
             <Navbar/>
             <Switch>
-              <Route component={Acceuil}/>
+              <Route exact path="/" component={Acceuil}/>
+              <Route exact path="/Parametre" component={Parametre}/>
             </Switch>
         </div>
       </Router>

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
 MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
-import { Route, Switch } from "react-router-dom";
-
 class NavbarPage extends Component {
 state = {
   isOpen: false
@@ -14,47 +12,37 @@ toggleCollapse = () => {
 
 render() {
   return (
-    <MDBNavbar color="default-color" dark expand="md">
+    <MDBNavbar color="light-blue" dark expand="md">
       <MDBNavbarBrand>
-        <strong className="white-text">Navbar</strong>
+        <strong className="white-text">MY HUE APP</strong>
       </MDBNavbarBrand>
       <MDBNavbarToggler onClick={this.toggleCollapse} />
       <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
         <MDBNavbarNav left>
           <MDBNavItem active>
-            <MDBNavLink to="#!">Home</MDBNavLink>
+            <MDBNavLink to="/">Acceuil</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="#!">Features</MDBNavLink>
+            <MDBNavLink to="/Parametre">Parametre</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="#!">Pricing</MDBNavLink>
+            <MDBNavLink to="/Autre">Autre</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>
-                <div className="d-none d-md-inline">Dropdown</div>
+                <div className="d-none d-md-inline">Autre</div>
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default" right>
                 <MDBDropdownItem href="#!">Action</MDBDropdownItem>
-                <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                <MDBDropdownItem href="#!">Autre Action</MDBDropdownItem>
+                <MDBDropdownItem href="#!">Encore autre chose</MDBDropdownItem>
+                <MDBDropdownItem href="#!">Encore autre chose</MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>
         </MDBNavbarNav>
         <MDBNavbarNav right>
-          <MDBNavItem>
-            <MDBNavLink className="waves-effect waves-light" to="#!">
-              <MDBIcon fab icon="twitter" />
-            </MDBNavLink>
-          </MDBNavItem>
-          <MDBNavItem>
-            <MDBNavLink className="waves-effect waves-light" to="#!">
-              <MDBIcon fab icon="google-plus-g" />
-            </MDBNavLink>
-          </MDBNavItem>
           <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>
