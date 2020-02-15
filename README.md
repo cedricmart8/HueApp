@@ -1,8 +1,8 @@
 # HueApp
 ### Les attributs de lumière suivants sont disponibles :
 
-<em>  id </em>  - Identification numérique du feu tel qu'il est enregistré sur le pont
-name - Nom configurable pour la lumière
+<em> id </em>  - Identification numérique du feu tel qu'il est enregistré sur le pont
+<em> name </em>- Nom configurable pour la lumière
 type - Type de lumière (par exemple, lumière colorée étendue, lumière tamisée)
 uniqueId - Id unique de la lumière
 fabricant - Nom du fabricant
