@@ -1,62 +1,41 @@
 import React, { Component } from 'react';
-const superagent = require('superagent');
+import { MDBBtn } from "mdbreact";
 const huejay = require('huejay');
 
 class Parametre extends Component {
   constructor(props){
     super(props);
+    this.client = ''
     this.state = {
-      scheduleProps: '',
-      lightProps: ''
-    };
+    }; 
+    this.alertLight = this.alertLight.bind(this);
   }
-  render() {
-    // var key = "UsNxwkK1ID5OiOTmhg-e2Gt9yVkb0Hr8oNGNsCSq"
-    // var IPBridge = "192.168.1.66"
-    
-    let client = new huejay.Client({
-      host:     '192.168.1.66',
-      port:     80,       // Optional
-      username: 'UsNxwkK1ID5OiOTmhg-e2Gt9yVkb0Hr8oNGNsCSq', // Optional
-      timeout:  15000,    // Optional, timeout in milliseconds (15000 is the default)
-    });
 
-
-    let user = new client.users.User;
-
-    // Optionally configure a device type / agent on the user
-    user.deviceType = 'huejay'; // Default is 'huejay'
-
-    client.lights.getAll()
-    .then(lights => {
-      for (let light of lights) {        
-        light.brightness     = 254; //Luminosite (0 a 254)
-        light.colorTemp      = 500; //Temperature de couleur (153 a 500)
-        light.transitionTime = 1; //Temps de transition (infini)
-        light.alert = "select"; //lselect pour clognoter tout le temps select pour clognoter seulement une fois ou none 
-        light.effect = "none"; //soit colorloop soit none
-        client.lights.save(light);
+  alertLight(){
+    this.client.lights.getAll()
+    .then(lights => {  
+      console.log("alert");   
+      for (let light of lights) {   
+        light.alert = "select"; //lselect pour clognoter tout le temps select pour clignoter seulement une fois ou none 
+        this.client.lights.save(light);
       }
     });
-
-    client.lights.getById(1)
-    .then(light => {
-      console.log('Found light:');
-      console.log(`  Light [${light.id}]: ${light.name}`);
-      console.log(`  brightness [${light.brightness}]`);
-      console.log(`  colorTemp [${light.colorTemp}]`);
-      console.log(`  transitionTime [${light.transitionTime}]`);
-    })
-    .catch(error => {
-      console.log('Could not find light');
-      console.log(error.stack);
+  };
+  
+  render() {
+    this.client = new huejay.Client({
+      host:     '192.168.1.66',
+      username: 'UsNxwkK1ID5OiOTmhg-e2Gt9yVkb0Hr8oNGNsCSq',
+      port:     80,
+      timeout:  15000,    // Optional, timeout in milliseconds (15000 is the default)
     });  
 
     return (
       <div className="App">
-        <a className="App-link" href="https://reactjs.org">
+        <p>
           Parametre
-        </a>
+        </p>
+        <MDBBtn color="elegant" onClick={this.alertLight}>Elegant</MDBBtn>
       </div>
     );
   }
