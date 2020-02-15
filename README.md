@@ -34,18 +34,9 @@
 
 ## Huejay est le seul client de Node.js qui maintient une liste des modèles Philips Hue supportés. L'attribut Light model renvoie un objet LightModel qui contient des détails supplémentaires sur le modèle :
 
-<<<<<<< Updated upstream
-id - Model Id, généralement la même valeur que Light modelId
-manufacturer  - Fabricant, généralement de la même valeur que le fabricant de luminaires
-name - Nom du modèle / produit (par exemple, Hue Spot GU10)
-type - Type de lumière, généralement la même valeur que le type de lumière
-colorGamut - La gamme de couleurs supportée par la lumière
-friendsOfHue - vrai si Amis de Hue, faux si non
-=======
 <br/><em>id</em> - Model Id, généralement la même valeur que Light modelId
 <br/><em>manufacturer</em>  - Fabricant, généralement de la même valeur que le fabricant de luminaires
 <br/><em>name</em> - Nom du modèle / produit (par exemple, Hue Spot GU10)
 <br/><em>type</em> - Type de lumière, généralement la même valeur que le type de lumière
 <br/><em>colorGamut</em> - La gamme de couleurs supportée par la lumière
 <br/><em>friendsOfHue</em> - vrai si Amis de Hue, faux si non
->>>>>>> Stashed changes
